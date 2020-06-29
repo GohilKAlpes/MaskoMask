@@ -279,7 +279,7 @@ header nav {
     /* background-color: #fdf9ff; 
     border: 1px solid #d4d4e3; 
     border-radius: 10px; */
-    padding: 25px;
+    padding: 25px 10px 25px 10px;
     text-align: left;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -501,6 +501,93 @@ footer ul li a {
     font-size: 16px;
 }
 /* Footer Css End */
+/* Mobile Menu Start */
+.Mob {
+    position: fixed;
+    width: 100%;
+    z-index: 1040;
+    top: 18px;
+}
+.Mob nav {
+    display: none;
+    width: 100%;
+}
+.Mob nav ul {
+    justify-content: space-between;
+    list-style: none;
+    display: grid;
+    width: auto;
+    position: absolute;
+    right: 0;
+}
+.Mob nav ul .nav-item {
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    background: #fff;
+    color: #cacaca;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    transform: rotateY(-90deg);
+    transform-origin: right;
+    margin-left: -70px;
+    transition: .4s;
+    padding: 0 15px;
+}
+.Mob nav ul .nav-item a {
+    color: #ec1839;
+}
+.Mob nav ul .nav-item:hover i {
+    transform: scale(1.2);
+    color: #ec1839;
+    transition: .3s;
+}
+.Mob nav ul .nav-item:nth-child(1) {
+    transform: inherit;
+    color: #ec1839;
+    font-size: 36px;
+    margin-left: 0;
+    border-top: 2px solid #ec1839;
+    border-bottom: 2px solid #ec1839;
+    border-left: 2px solid #ec1839;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.Mob nav ul label {
+    margin: 0;
+}
+.Mob input:checked ~ nav ul .nav-item:nth-child(1) {
+    border-bottom-left-radius: 0px;
+    border-right: none;
+}
+.Mob input {
+    display: none;
+}
+.Mob input:checked ~ nav ul .nav-item:nth-child(1) i {
+    transform: rotate(180deg);
+}
+.Mob input:checked ~ nav ul .nav-item:nth-child(2) {
+    transition-delay: .1s;
+}
+.Mob input:checked ~ nav ul .nav-item:nth-child(3) {
+    transition-delay: .4s;
+}
+.Mob input:checked ~ nav ul .nav-item:nth-child(4) {
+    transition-delay: .7s;
+}
+.Mob input:checked ~ nav ul .nav-item:nth-child(5) {
+    transition-delay: .9s;
+    border-bottom-left-radius: 10px;
+}
+.Mob input:checked ~ nav ul .nav-item {
+    margin-left: 0;
+    transform: rotateY(0deg);
+    border-left: 2px solid #ec1839;
+    border-bottom: 2px solid #ec1839;
+}
+
+/* Mobile Menu End */
 /* Media Query Start */
 @media (max-width: 575px) {
     .service .service-item,
@@ -538,6 +625,19 @@ footer ul li a {
     }
     .slidenone {
         display: none;
+    }
+    header nav {
+        background-color: #f2f2fc !important;
+    }
+    .MainSlider {
+        margin-top: 0px;
+    }
+    .navbar-light .navbar-brand {
+        color: red !important;
+        font-weight: bold;
+    }
+    .Mob nav {
+        display: block;
     }
 }
 /* Media Query End */
